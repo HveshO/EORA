@@ -1,0 +1,27 @@
+[project]
+name = "eora_support"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "OlgaHvesh", email = "khveshchuk@tl.protei.ru"},
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "tqdm",
+    "openai",
+    "requests",
+    "python-dotenv",
+    "python-telegram-bot",
+    "beautifulsoup4",
+    "scikit-learn",
+    "numpy",
+    "scipy",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false

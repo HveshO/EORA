@@ -1,0 +1,47 @@
+# Кеш
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Виртуальное окружение
+.venv/
+env/
+venv/
+
+# IDE конфиг
+.idea/
+.vscode/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Переменные окружения
+.env
+
+# Файлы тестов и логи
+*.log
+*.pytest_cache/
+.coverage
+
+# Обработанные данные
+data/eora_cases.json
+
+# Векторная БД (но сохраняем папку)
+vector_store/*
+!vector_store/.gitkeep
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Build outputs
+dist/
+build/
+*.egg-info/
