@@ -11,4 +11,6 @@ __pycache__/
 *.pyd
 .pdm-cache/
 .env
+
+
 requirements.txt
