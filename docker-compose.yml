@@ -3,12 +3,10 @@ version: "3.9"
 services:
   api:
     build: .
-    container_name: eora_ai_assistant
-    ports:
-      - "8000:8000"
+    container_name: eora_ai_assistant_bot
     env_file:
       - .env
     volumes:
       - .:/app
     restart: always
-    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    command: pdm run python src/main.py

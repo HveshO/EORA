@@ -9,7 +9,7 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "tqdm",
-    "openai",
+    "openai>=1.100.2",
     "requests",
     "python-dotenv",
     "python-telegram-bot",
@@ -17,6 +17,17 @@ dependencies = [
     "scikit-learn",
     "numpy",
     "scipy",
+    "aiogram>=3.22.0",
+    "pydantic>=2.11.7",
+    "rank-bm25>=0.2.2",
+    "pymorphy2>=0.9.1",
+    "langchain-community>=0.3.27",
+    "unstructured>=0.18.13",
+    "langchain-openai>=0.3.30",
+    "faiss-cpu>=1.12.0",
+    "sentence-transformers>=5.1.0",
+    "langchain-huggingface>=0.3.1",
+    "accelerate>=1.10.0",
 ]
 requires-python = "==3.12.*"
 readme = "README.md"

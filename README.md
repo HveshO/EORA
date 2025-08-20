@@ -4,33 +4,50 @@
 Сервис для ответов на вопросы потенциальных клиентов с использованием материалов EORA.
 
 ### Технологии
-- Python 3.x
-- OpenAI GPT-4 / GigaChat
-- FastAPI для HTTP API
-- Парсер архивных страниц/файлов с eora.ru
-- CLI и Telegram-бот
-
+- Python 3.12
+- LLM - mistralai/Mistral-7B-Instruct-v0.2
+- LangChain
+- FAISS
+- telegram-бот
+- pdm
+## Входные данные
+- data/urls.txt
+## Хранилище
+- data/faiss_index
 ### Использование
-
 1. Склонируйте репозиторий
-2. Запустите парсер для предзагрузки материалов:  
-    `python core/crawler.py`
-3. Запустите API:  
-    `python core/api.py`
-4. (По желанию) используйте CLI или Telegram-бота
-
+2. настройте API ключ телеграм бота через @BotFather
+3. настройте API ключ для модели LLM https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
+4. иниализируйте в корне .env:
+```
+TELEGRAM_TOKEN=....
+API_KEY=....
+доп параметры:
+DEBUG = True
+BUILD_FAISS = True
+TOP_K = 8
+ANSWER_MAX_TOKENS = 700
+ANSWER_TEMPERATURE = 0.3
+PATH_FILE_URLS=/data/urls.txt
+PATH_STORAGE_INDEX=/data/faiss_index
+```
+5. Запуск докер контейнера:
+```docker compose up```
+6. Запуск вне докер контейнера:
+```pdm install
+pdm run python src/main.py
+```
 ### Примеры вопрос-ответ
 Вопрос: "Что вы делаете для ритейла?"
 Ответ:
 > Мы реализовали HR-бота для Магнита[] и визуальный поиск для KazanExpress[].
 
-### Ссылки на материалы
--  https://eora.ru/cases/chat-boty/hr-bot-dlya-magnit-kotoriy-priglashaet-na-sobesedovanie
--  https://eora.ru/cases/kazanexpress-poisk-tovarov-po-foto
-
 ## Оценка качества
-
-Описание метрик, ограничения.
+Если нужна расширяемость проекта то необходима реализация классов и di
+Если данных очень много psql
+Есть логирование, но обработка ошибок могла быть лучше
+Настройки модели нужно тонко подбирать
 
 ## Roadmap
-...
+UnstructuredURLLoader - с ним больше всего возилась так как функция в библиотеке не рабочая
+а также с настройкой LLM

@@ -1,11 +1,3 @@
-fastapi
-uvicorn
-tqdm
+aiogram
 openai
-requests
-python-dotenv
-python-telegram-bot
-beautifulsoup4
-scikit-learn
-numpy
-scipy
+pydantic
