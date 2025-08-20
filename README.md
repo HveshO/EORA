@@ -15,14 +15,16 @@
 ## Хранилище
 - data/faiss_index
 ### Использование
-1. Склонируйте репозиторий
-2. настройте API ключ телеграм бота через @BotFather
-3. настройте API ключ для модели LLM https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
-4. иниализируйте в корне .env:
+1.Склонируйте репозиторий
+2. Настройте API ключ телеграм бота через @BotFather
+3. Настройте API ключ для модели LLM https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
+4. Иницализируйте в корне .env:
 ```
 TELEGRAM_TOKEN=....
 API_KEY=....
+```
 доп параметры:
+```
 DEBUG = True
 BUILD_FAISS = True
 TOP_K = 8
